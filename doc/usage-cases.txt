@@ -1,0 +1,183 @@
+Directory States:
+
+	Case d.1: Empty directory
+	
+	
+		We are being given an empty family of sets.
+	
+		Therefore we are given an empty set.
+	
+		Therefore we return the null set.
+	
+		Input: Empty directory
+	
+		Output: Empty set
+	
+	
+	Case d.2:  Directory with files and no subdirectories
+
+		Output: The union of the outputs for file (see cases
+					f.1, f.2, f.3)
+
+	Case d.3:  Directory with subdirectories and no files
+
+		Output: The union of the outputs of each of the 
+					subdirectories (see d1, d.2, d.3, d.4)
+
+	Case d.4: Case with both files and subdirectories
+		
+		Output: The union of the output of all items in
+				directory (see all other cases)
+
+File Content States:	
+
+
+	Case f.1: Empty file
+
+	
+		We are being given the set containing the null set.
+	
+		The union over this set is the null set.
+	
+		Therefore we return the null set.
+		
+		Input: Empty file
+	
+		Ouput: Empty
+	
+
+	Case f.2: File containing only delimiters
+
+	
+		Output: Empty set
+
+	
+	Case f.3: File containing only alphanumeric characters
+
+	
+		Output: 1 token
+
+Dirent Format States
+--------------------
+
+
+	Case ff.1: Dirent name begins with -
+		
+		//todo
+
+	Case ff.2: Dirent name is "."
+
+		//todo
+
+	Case ff.3: Dirent name is ".."
+
+		//todo
+
+	Case ff.4 Dirent name begins with . (hidden file)
+
+		//todo
+
+Initial Input States:
+---------------------
+
+	Case ii.1: Name of output file is identical to name of input dirent
+
+		Action: The user is clearly misguided. Chastise and exit immediately.
+
+	Case ii.2: Output file already exists
+
+		Prompt user with three options:
+
+			1. Choose new file name
+			2. Proceed and overwrite
+			3. Exit
+
+Signal Handling
+---------------
+
+
+	Make sure all files are closed and all memory is freed before
+	returning control to operating system
+
+		
+Writing To File
+---------------
+
+	Case 1: We have write access to directory but file exists and we
+				don't have write access to that file
+	
+			Abort and display message
+DataStructures:
+---------------
+
+	HashTable
+
+		// these get inserted into linked list
+		HashNode {
+
+			str filename; // index
+			int count;
+		}
+
+		// methods
+		HashNode* hashNodeFactory(str filename)
+		void IncrementHashNodeCount(HashNode hn)
+		void HNDelete(HNode hn)
+
+	SortedList:
+
+		Objects in SortedList are HashNodes
+
+	StackString:
+
+		struct Node StackString {
+
+			char *arr;
+			int len;
+			int size;
+			int maxsize;
+		}
+
+		// functions
+		DSCreate(initial size)
+		DSSize(DynamicArray da)
+		DSLen(DynamicArray da)
+		DSDestroy(da)
+		DSAdd(da, item) // add to end of array
+		DSSet(da, index, item) // sets da[index] to item. frees
+		  					// item if value exists at that position
+		  					// does not insert values past da[len-1]
+		DSGet(da, index) // gets item if index is valid. else returns null
+		DSGrow(da) // double array capacity
+		DSGetStr() // return contents as str
+			
+
+Program Logic
+-------------
+
+Input inputStr from command line.
+Input outputStr from command line
+
+if not haveWriteAccess(outputStr):
+
+	display error message
+	exit(1)
+
+h = InitializeHashtable()
+
+If inputStr is filename):
+
+	AddToIndexFromFile(filename, h)
+Else:
+
+	PopulateIndex(inputStr, h)
+
+Print
+
+
+Error Handling
+--------------
+
+
+
+

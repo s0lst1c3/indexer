@@ -1,0 +1,59 @@
+Organization
+------------
+
+Multifile compilation
+
+DATA STRUCTURES
+---------------
+	Basic:
+	------
+	[ ] Hash Table
+		Requirements:
+
+			[ ] SortedList
+
+	[ ] Stack
+
+Inputs:
+-------
+
+	Usage: index <inverted-index file name> <directory or file name>
+
+		First argument is output file, second argument is input file or
+		directory
+
+Output
+------
+
+	File format:
+
+		<list> token
+		name1 count1 name 2 count2 name3 count3 name4 count4 name5 count5
+		. . .
+		</list>
+
+	Lists should be arranged in ascending sorted order of tokens. Each line
+	can contain, at most, five name:count pairs.
+
+
+Components
+----------
+
+
+	---------------------------------
+	-								-
+	-								-
+	-								-
+	-								-
+	-							    -
+	---------------------------------
+
+
+
+	----------------------------------
+	-								 -
+	-								 -
+	- 			Input Handler		 -
+	-								 -
+	- 								 -
+	---------------------------------

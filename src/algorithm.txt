@@ -1,0 +1,55 @@
+listdir(path):
+
+	if not path:
+		return
+
+	dirname = path.get()
+
+	dir = opendir(dirname)
+	if not dir:
+		return
+
+	entry = readdir(dir)
+
+	while entry != NULL:
+
+		if no read access:
+			print error
+
+		elif entry is a directory:
+	
+			if no execute access to entry:
+				print error
+				continue
+
+			name = entry.name
+			
+			if name != "." and name != "..":
+				path.push(name)
+
+			listdir(path)
+			path.pop()
+
+		elif entry is regular file:
+			fileSlave(file)
+		else
+			print error
+			continue
+
+		entry = readdir(dir)
+
+	closedir(dir)
+
+
+dirGrinder(path):
+
+	if path is null:
+
+		return
+
+	if path is file:
+
+		read file contents
+		return
+
+	dir = opendir(path)	

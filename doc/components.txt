@@ -1,0 +1,46 @@
+
+
+
+
+			 		Housekeeping
+						|  |
+						|  |
+						|
+						|
+						|
+						V
+					Detail Loop
+						|
+						|
+						|
+						|
+						|
+						V
+					End of Job
+
+
+Initial Input Handling
+----------------------
+
+	Validates and processes user input
+
+
+Error Handler
+-------------
+
+	All error messages should go to stderr
+
+	Fatal errors should display a message then exit
+
+Output Handler
+--------------
+
+	We should use bufferred output
+
+Signal Handler
+--------------
+
+	Make sure all files are closed and all memory is freed before
+	returning control to operating system
+
+
