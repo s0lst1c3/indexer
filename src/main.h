@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <dirent.h>
 #include "PathStack.h"
+#include "dictstat.h"
 //#include "hashtable.h"
 
 
@@ -21,7 +22,7 @@ struct Config {
 typedef struct Config Config;
 
 // functions in direntL0rd
-void dirGinder(PathStack*, Config*);
+void dirGrinder(PathStack*, Config*);
 void fileJockie(PathStack *path, Config *config);
 
 // functions in main

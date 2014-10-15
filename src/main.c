@@ -101,15 +101,6 @@ setup(int argc, char **argv)
 		exit(1);
 	}
 
-	/*
-	// allocate space for hash table
-	config->index = (DankHash*)malloc(sizeof(DankHash));
-	if (config->index == NULL) {
-		fprintf(stderr, "Malloc failed: %s on line %d", __FILE__, __LINE__-2);
-		exit(1);
-	}
-	*/
-
 	// we append ./ to the beginning of our path
 	char* basedir = (char*)malloc(sizeof(char) * strlen(inputFile) + 3);	
 	if (basedir == NULL) {
@@ -131,6 +122,9 @@ setup(int argc, char **argv)
 	config->outputFile = strdup(outputFile);
 	config->flag_errmsg = 0;
 	config->flag_fileonly = flag_fileonly;
+
+	// initialize the tree
+	initialize();
 
 	return config;
 }
@@ -166,12 +160,24 @@ direntL0rd(Config *config)
 
 void fileJockie(PathStack *path, Config *config) {
 	char *name = PSGet(path);
+	FILE* inFile = fopen(name, "r");
+	if (inFile == NULL) {
+		perror("Oh well that sucks\n");
+		exit(1);
+	}
+	readDict(inFile, name);
+	scanData(inFile);
+	storeData();
+
+	fclose(inFile);
 	printf("%s\n", name);	
 }
 
 void
 endOfJob(Config *config)
 {
+	printAllData();
+	destroy();
 	//void printOutput(config);
 	if (config->flag_errmsg) {
 
@@ -182,6 +188,7 @@ endOfJob(Config *config)
 	free(config->outputFile);
 	free(config->basedir);
 	free(config);
+	
 
 	return;
 }

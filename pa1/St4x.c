@@ -5,7 +5,7 @@
 struct SNode {
 
 	struct SNode *prev;
-	int c;
+	char c;
 };
 typedef struct SNode SNode;
 
@@ -15,7 +15,7 @@ struct St4x {
 	int size;
 };
 
-int STXPop(St4x *s) {
+char STXPop(St4x *s) {
 
 	if (s == NULL) {
 		return 0x00;
@@ -26,7 +26,7 @@ int STXPop(St4x *s) {
 		return 0x00;
 	}
 
-	int c = s->top->c;	
+	char c = s->top->c;	
 	SNode *tmp = s->top;
 	s->top = s->top->prev;
 	free(tmp);
@@ -56,7 +56,7 @@ static void Gutenb0rg(SNode *current) {
 	}
 
 	Gutenb0rg(current->prev);
-	printf("%c", (char)current->c);
+	printf("%c", current->c);
 }
 void STXPrint(St4x *s) {
 
@@ -67,7 +67,7 @@ void STXPrint(St4x *s) {
 }
 
 
-int STXPush(int c, St4x *s) {
+int STXPush(char c, St4x *s) {
 
 	if (s == NULL) {
 
