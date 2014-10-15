@@ -1,3 +1,6 @@
+// THIS IS THE FIXED VERSION
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,7 +23,7 @@ void PSPop(PathStack *ss) {
 }
 void PSPush(char *str, PathStack *ss) {
 
-	if (ss->len == 0 ) {
+	if (ss->len == 0) {
 
 		int inLen = strlen(str);
 		while (ss->len + inLen >= ss->size) {
@@ -40,6 +43,7 @@ void PSPush(char *str, PathStack *ss) {
 		ss->levels++;
 	}
 	else {
+
 		int inLen = strlen(str) + 1;
 		while (ss->len + inLen >= ss->size) {
 
@@ -48,6 +52,15 @@ void PSPush(char *str, PathStack *ss) {
 		int oldLen = ss->len;
 		int i = 0;
 		int j = oldLen;
+		ss->arr[j++] = '/';
+		while (i + 1 < inLen) {
+
+			ss->arr[j++] = str[i++];
+		}
+		ss->len = j;
+		ss->arr[j] = '\0';
+		STXPush(oldLen, ss->lenstack);
+		ss->levels++;
 	}
 }
 void PSDestroy(PathStack *ss) {

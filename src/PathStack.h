@@ -13,12 +13,12 @@ struct PathStack {
 };
 typedef struct PathStack PathStack;
 
-void PSGrow(StackString *ss);
-char *PSGet(StackString *ss);
-void PSPop(StackString *ss);
+void PSGrow(PathStack *path);
+char *PSGet(PathStack *path);
+void PSPop(PathStack *path);
 PathStack * PSCreate();
-void PSDestroy(StackString *ss);
-void PSPush(char *str, StackString *ss);
+void PSDestroy(PathStack *path);
+void PSPush(char *str, PathStack *path);
 
 
 #endif
