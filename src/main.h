@@ -7,8 +7,8 @@
 #include <unistd.h>
 #include <dirent.h>
 #include "PathStack.h"
-#include "dictstat.h"
-//#include "hashtable.h"
+#include "sorted-list.h"
+#include "indexer.h"
 
 
 struct Config {
@@ -17,17 +17,26 @@ struct Config {
 	char *outputFile;
 	int flag_fileonly;
 	int flag_errmsg;
-	//DankHash *index;
+	SortedList *tokens;
 };
 typedef struct Config Config;
 
-// functions in direntL0rd
-void dirGrinder(PathStack*, Config*);
-void fileJockie(PathStack *path, Config *config);
+struct TokenCount {
 
-// functions in main
+	char *basedir;
+	char *outputFile;
+	int flag_fileonly;
+	int flag_errmsg;
+	SortedList *tokens;
+};
+typedef struct Config Config;
+
 Config *setup(int argc, char** argv);
-void direntL0rd(Config *config);
+char* prepareFilename(char* filename);
+void validateInputs(char *inputFile, char *outputFile, Config *config);
+
+void dirTraverser(Config *config);
+void dirTraverserHelper(PathStack*, Config*);
+void fileParser(PathStack *path, Config *config);
+
 void endOfJob(Config *config);
-
-

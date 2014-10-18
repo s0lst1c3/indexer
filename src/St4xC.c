@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "St4x.h"
+#include "St4xC.h"
 
 struct SNode {
 
 	struct SNode *prev;
-	int c;
+	char c;
 };
 typedef struct SNode SNode;
 
-struct St4x {
+struct St4xC {
 	
 	SNode *top;
 	int size;
 };
 
-int STXPop(St4x *s) {
+char STXCPop(St4xC *s) {
 
 	if (s == NULL) {
 		return 0x00;
@@ -26,7 +26,7 @@ int STXPop(St4x *s) {
 		return 0x00;
 	}
 
-	int c = s->top->c;	
+	char c = s->top->c;	
 	SNode *tmp = s->top;
 	s->top = s->top->prev;
 	free(tmp);
@@ -34,7 +34,7 @@ int STXPop(St4x *s) {
 	return c;
 }
 
-void STXDestroy(St4x *s) {
+void STXCDestroy(St4xC *s) {
 
 	if (s == NULL) {
 
@@ -43,7 +43,7 @@ void STXDestroy(St4x *s) {
 
 	while(s->size > 0) {
 		
-		STXPop(s);
+		STXCPop(s);
 	}
 	free(s);
 }
@@ -56,9 +56,8 @@ static void Gutenb0rg(SNode *current) {
 	}
 
 	Gutenb0rg(current->prev);
-	printf("%c", (char)current->c);
 }
-void STXPrint(St4x *s) {
+void STXCPrint(St4xC *s) {
 
 	if (s == NULL) {
 		return;
@@ -66,7 +65,7 @@ void STXPrint(St4x *s) {
 	Gutenb0rg(s->top);
 }
 
-int STXPush(int c, St4x *s) {
+int STXCPush(char c, St4xC *s) {
 
 	if (s == NULL) {
 
@@ -97,9 +96,9 @@ int STXPush(int c, St4x *s) {
 	return 1;
 }
 
-St4x *STXSpawn() {
+St4xC *STXCSpawn() {
 
-	St4x *s = (St4x*)malloc(sizeof(St4x));
+	St4xC *s = (St4xC*)malloc(sizeof(St4xC));
 	if (s == NULL) {
 
 		return 0;
@@ -110,7 +109,7 @@ St4x *STXSpawn() {
 	return s;
 }
 
-int  STXLen(St4x *s) {
+int  STXCLen(St4xC *s) {
 
 	return s->size;
 }
