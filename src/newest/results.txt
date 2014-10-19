@@ -1,0 +1,291 @@
+<list> acw89
+./hmm//test.txt 1 
+</list>
+<list> ac1084
+./hmm//names.csv 1 
+</list>
+<list> aditya
+./hmm//test.txt 1 
+</list>
+<list> ajs473
+./hmm//test.txt 1 
+</list>
+<list> allocated
+./hmm//main.c 2 
+</list>
+<list> avijeet
+./hmm//test.txt 1 
+</list>
+<list> az177
+./hmm//names.csv 1 
+</list>
+<list> basic
+./hmm//main.c 2 
+</list>
+<list> been
+./hmm//main.c 1 
+</list>
+<list> c
+./hmm//main.c 1 
+</list>
+<list> calloc
+./hmm//main.c 1 
+</list>
+<list> char
+./hmm//main.c 4 
+</list>
+<list> com
+./hmm//names.csv 1 
+</list>
+<list> comparedoubles
+./hmm//main.c 1 
+</list>
+<list> compareints
+./hmm//main.c 1 
+</list>
+<list> comparestrings
+./hmm//main.c 1 
+</list>
+<list> corrado
+./hmm//test.txt 1 
+</list>
+<list> cs
+./hmm//test.txt 1 ./hmm//names.csv 1 
+</list>
+<list> dab374
+./hmm//test.txt 1 
+</list>
+<list> dalal
+./hmm//test.txt 1 
+</list>
+<list> data
+./hmm//main.c 2 
+</list>
+<list> destroybasictypealloc
+./hmm//main.c 1 
+</list>
+<list> destroybasictypenoalloc
+./hmm//main.c 1 
+</list>
+<list> destructor
+./hmm//main.c 1 
+</list>
+<list> double
+./hmm//main.c 6 
+</list>
+<list> duncan
+./hmm//test.txt 1 
+</list>
+<list> d1
+./hmm//main.c 3 
+</list>
+<list> d2
+./hmm//main.c 3 
+</list>
+<list> e
+./hmm//main.c 1 
+</list>
+<list> eden
+./hmm//names.csv 1 
+</list>
+<list> edu
+./hmm//test.txt 20 ./hmm//names.csv 4 
+</list>
+<list> eric
+./hmm//test.txt 1 
+</list>
+<list> erin
+./hmm//test.txt 1 
+</list>
+<list> etc
+./hmm//main.c 1 
+</list>
+<list> fmp41
+./hmm//test.txt 1 
+</list>
+<list> for
+./hmm//main.c 4 
+</list>
+<list> free
+./hmm//main.c 1 
+</list>
+<list> functions
+./hmm//main.c 1 
+</list>
+<list> g
+./hmm//main.c 1 
+</list>
+<list> gmail
+./hmm//names.csv 1 
+</list>
+<list> h
+./hmm//main.c 2 
+</list>
+<list> harry
+./hmm//test.txt 1 
+</list>
+<list> has
+./hmm//main.c 1 
+</list>
+<list> include
+./hmm//main.c 2 
+</list>
+<list> int
+./hmm//main.c 11 
+</list>
+<list> i1
+./hmm//main.c 2 
+</list>
+<list> i2
+./hmm//main.c 2 
+</list>
+<list> jer220
+./hmm//test.txt 1 
+</list>
+<list> jgk86
+./hmm//test.txt 1 
+</list>
+<list> john
+./hmm//test.txt 1 
+</list>
+<list> julie
+./hmm//test.txt 1 
+</list>
+<list> jvw29
+./hmm//names.csv 1 
+</list>
+<list> kadaru
+./hmm//names.csv 1 
+</list>
+<list> karan
+./hmm//names.csv 1 
+</list>
+<list> kumar
+./hmm//test.txt 1 
+</list>
+<list> list
+./hmm//main.c 2 
+</list>
+<list> mah326
+./hmm//test.txt 1 
+</list>
+<list> main
+./hmm//main.c 1 
+</list>
+<list> malloc
+./hmm//main.c 1 
+</list>
+<list> memory
+./hmm//main.c 2 
+</list>
+<list> mjl288
+./hmm//test.txt 1 
+</list>
+<list> msk154
+./hmm//names.csv 1 
+</list>
+<list> mylist
+./hmm//main.c 2 
+</list>
+<list> nf139
+./hmm//test.txt 1 
+</list>
+<list> nikhil
+./hmm//test.txt 1 
+</list>
+<list> not
+./hmm//main.c 1 
+</list>
+<list> p
+./hmm//main.c 3 
+</list>
+<list> pointers
+./hmm//main.c 2 
+</list>
+<list> p1
+./hmm//main.c 6 
+</list>
+<list> p2
+./hmm//main.c 6 
+</list>
+<list> return
+./hmm//main.c 4 
+</list>
+<list> revan
+./hmm//test.txt 1 
+</list>
+<list> rutgers
+./hmm//test.txt 20 ./hmm//names.csv 4 
+</list>
+<list> ryan
+./hmm//test.txt 1 
+</list>
+<list> s
+./hmm//test.txt 1 
+</list>
+<list> scarletmail
+./hmm//test.txt 9 ./hmm//names.csv 2 
+</list>
+<list> slinsert
+./hmm//main.c 1 
+</list>
+<list> slremove
+./hmm//main.c 1 
+</list>
+<list> song
+./hmm//test.txt 1 
+</list>
+<list> sopher
+./hmm//test.txt 1 
+</list>
+<list> sorted
+./hmm//main.c 2 
+</list>
+<list> stern
+./hmm//test.txt 1 
+</list>
+<list> strcmp
+./hmm//main.c 1 
+</list>
+<list> string
+./hmm//main.c 1 
+</list>
+<list> s1
+./hmm//main.c 2 
+</list>
+<list> s2
+./hmm//main.c 2 
+</list>
+<list> that
+./hmm//main.c 1 
+</list>
+<list> to
+./hmm//main.c 2 
+</list>
+<list> types
+./hmm//main.c 2 
+</list>
+<list> use
+./hmm//main.c 2 
+</list>
+<list> vj92
+./hmm//test.txt 1 
+</list>
+<list> void
+./hmm//main.c 10 
+</list>
+<list> wn48
+./hmm//test.txt 1 
+</list>
+<list> x
+./hmm//main.c 3 
+</list>
+<list> 0
+./hmm//main.c 1 
+</list>
+<list> 1
+./hmm//main.c 2 
+</list>
+<list> 5
+./hmm//main.c 1 
+</list>

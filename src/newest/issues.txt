@@ -1,0 +1,4 @@
+should work for the following test cases
+
+~/Downloads
+/home/solstice/Downloads
