@@ -317,7 +317,7 @@ storeDataHelper(Node *current, St4x *s, char c, int prefixes)
 
 		if (current->isDictWord == 1 && current->matches > 0) {
 			Occurrences *oc = OccurrencesFactory(base.file, current->matches);
-			printf("Storing { %s : %d }\n", base.file, current->matches);
+			//printf("Storing { %s : %d }\n", base.file, current->matches);
 			SLInsert(current->sl, oc);
 		}
 

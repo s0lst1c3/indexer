@@ -232,6 +232,8 @@ endOfJob(Config *config)
 	free(config->outputFile);
 	free(config->basedir);
 	free(config);
+
+	printf("Success!\n");
 }
 
 
