@@ -43,6 +43,7 @@ OccurrencesFactory(char *file, int count)
 		oc->file[i] = file[i];
 		i++;
 	}
+	oc->file[i] = '\0';
 	oc->count = count;
 	return oc;
 }
@@ -77,7 +78,7 @@ nodeFactory()
 	next->isDictWord = 0;
 	next->superwords = 0;
 	next->matches = 0;
-	next->sl = SLCreate(compareOccurrences, destroyOccurrences, update);
+	next->sl = SLCreate(compareOccurrences, destroyOccurrences);
 
 	return next;
 }
@@ -176,6 +177,8 @@ readDict(FILE *dict_file, char* filename)
 {
 	base.file = filename;
 	while ( TrieInsert(dict_file, base.root) );
+
+	rewind(dict_file);
 }
 
 void
@@ -312,8 +315,9 @@ storeDataHelper(Node *current, St4x *s, char c, int prefixes)
 
 		STXPush(c, s);
 
-		if (current->isDictWord == 1) {
+		if (current->isDictWord == 1 && current->matches > 0) {
 			Occurrences *oc = OccurrencesFactory(base.file, current->matches);
+			printf("Storing { %s : %d }\n", base.file, current->matches);
 			SLInsert(current->sl, oc);
 		}
 
@@ -374,17 +378,23 @@ printAllDataHelper(Node *current, St4x *s, char c, int prefixes, FILE *f)
 			while (word[i] != '\0')
 				STXPush(word[i++], s);
 			fprintf(f, "<list> %s\n", word);
+			//printf("<list> %s\n", word);
 			free(word);
 			
 			Occurrences *oc = (Occurrences*)SLGetItem(iter);
-			fprintf(f, "%s %d", oc->file, oc->count);
+			fprintf(f, "%s %d ", oc->file, oc->count);
+			//printf("%s %d", oc->file, oc->count);
 			int m = 1;
 			while ( (oc = SLNextItem(iter)) ) {
-				if (m % 5 == 0)
+				if (m % 5 == 0) {
 					fprintf(f,"\n");
-				fprintf(f, "%s %d", oc->file, oc->count);
+					//printf("\n");
+				}
+				fprintf(f, "%s %d ", oc->file, oc->count);
+				//printf("%s %d", oc->file, oc->count);
 			}
-			fprintf(f, "\n</list>");
+			fprintf(f, "\n</list>\n");
+			//printf("\n</list>");
 		}
 
 		int i;

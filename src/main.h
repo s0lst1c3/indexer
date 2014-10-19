@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include <dirent.h>
 #include "PathStack.h"
-#include "sorted-list.h"
 #include "indexer.h"
 
 
@@ -17,17 +16,6 @@ struct Config {
 	char *outputFile;
 	int flag_fileonly;
 	int flag_errmsg;
-	SortedList *tokens;
-};
-typedef struct Config Config;
-
-struct TokenCount {
-
-	char *basedir;
-	char *outputFile;
-	int flag_fileonly;
-	int flag_errmsg;
-	SortedList *tokens;
 };
 typedef struct Config Config;
 

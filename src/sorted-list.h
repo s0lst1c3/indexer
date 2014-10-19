@@ -1,11 +1,11 @@
 /* File: sorted-list.h
  * Project: Assignment 2 - Sorted List
- * Authors: John Ryan, Lucas Rivera
- * Netid(s): jgr68, lr411
+ * Authors: John Ryan
+ * Netid(s): jgr68
  * Date Created: 30 Sep 2014
  * Last Modified: 01 Sep 2014
- * Email: john.ryan@rutgers.edu, lr411@rutgers.edu
- * Description:
+ * Email: john.ryan@rutgers.edu
+ * Description: The header file for the sorted-list.h data type
  */
 
 #ifndef SORTED_LIST_H
@@ -20,13 +20,11 @@ struct SortedList;
 struct SortedListIterator;
 
 typedef struct SortedList* SortedListPtr;
-typedef struct SortedList SortedList;
 typedef struct SortedListIterator* SortedListIteratorPtr;
 typedef int    (*CompareFuncT)( void *, void * );
 typedef void   (*DestructFuncT)( void * );
-typedef void   (*Update)( void *);
 
-SortedListPtr         SLCreate ( CompareFuncT cf, DestructFuncT df, Update up);
+SortedListPtr         SLCreate ( CompareFuncT cf, DestructFuncT df );
 void                  SLDestroy( SortedListPtr list );
 int                   SLInsert ( SortedListPtr list, void *newObj );
 int                   SLRemove ( SortedListPtr list, void *newObj );
@@ -34,5 +32,6 @@ SortedListIteratorPtr SLCreateIterator ( SortedListPtr list );
 void                  SLDestroyIterator( SortedListIteratorPtr iter);
 void                 *SLGetItem ( SortedListIteratorPtr iter );
 void                 *SLNextItem( SortedListIteratorPtr iter );
+void                 SLDebugPrint(SortedListPtr sl);
 
 #endif

@@ -1,4 +1,5 @@
 #include "main.h"
+#include "indexer.h"
 
 int
 main(int argc, char **argv)
@@ -66,9 +67,7 @@ setup(int argc, char **argv)
 	config->outputFile = outputFile;
 	config->flag_errmsg = 0;
 
-	
-	// initialize trie
-	initialize();
+	initialize();	
 	return config;
 }
 
@@ -202,30 +201,28 @@ dirTraverserHelper(PathStack* path, Config *config)
 void
 fileParser(PathStack *path, Config *config)
 {
-	// get the path name as a string and open as file
+
 	char *name = PSGet(path);
+	printf("%s\n", name);
+	
 	FILE* inFile = fopen(name, "r");
 	if (inFile == NULL) {
 		perror("Madness??\n");
 		exit(1);
 	}
-
-	// read tokens into Trie
 	readDict(inFile, name);
 	scanData(inFile);
 	storeData();
 	resetData();
+	fclose(inFile);
 }
 
 void
 endOfJob(Config *config)
 {
 
-	printAllData(config->outputFile);
 	
-	// destroy the trie	
-	destroy();
-
+	printAllData(config->outputFile);
 	// freedumz	
 	free(config->outputFile);
 	free(config->basedir);
