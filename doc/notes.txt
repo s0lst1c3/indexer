@@ -8,3 +8,7 @@ should work for the following test cases
 Unfinished:
 
 Maybe we should include the iostd.c and iostd.h from legacy
+
+Todo:
+
+all functions should check for null pointers

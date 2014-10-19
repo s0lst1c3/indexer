@@ -1,6 +1,8 @@
 #include "main.h"
 #include "indexer.h"
 
+#define UNCERTAINTY ' '
+
 int
 main(int argc, char **argv)
 {
@@ -202,14 +204,18 @@ void
 fileParser(PathStack *path, Config *config)
 {
 
+	// convert path to string
 	char *name = PSGet(path);
-	printf("%s\n", name);
-	
+	//printf("%s\n", name);
+
+	// open the file	
 	FILE* inFile = fopen(name, "r");
 	if (inFile == NULL) {
 		perror("Madness??\n");
 		exit(1);
 	}
+	
+	// forage fresh datums from file then close
 	readDict(inFile, name);
 	scanData(inFile);
 	storeData();
@@ -220,15 +226,12 @@ fileParser(PathStack *path, Config *config)
 void
 endOfJob(Config *config)
 {
-
-	
 	printAllData(config->outputFile);
+	
 	// freedumz	
 	free(config->outputFile);
 	free(config->basedir);
 	free(config);
-
-	return;
 }
 
 
